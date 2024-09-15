@@ -1,0 +1,29 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --inspect index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/nguyentrongkhoi123/Nodejs.git"
+  },
+  "keywords": [
+    "ntkkidz2k5"
+  ],
+  "author": "tkhoi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nguyentrongkhoi123/Nodejs/issues"
+  },
+  "homepage": "https://github.com/nguyentrongkhoi123/Nodejs#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^4.21.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
