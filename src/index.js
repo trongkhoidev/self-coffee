@@ -16,7 +16,7 @@ app.use(
 app.use(express.json());
 
 // Template engine
-app.engine('handlebars', handlebars.engine());
+    app.engine('handlebars', handlebars.engine());
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'resources/views'));
 
