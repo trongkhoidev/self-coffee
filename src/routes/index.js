@@ -1,9 +1,14 @@
-const newRouter = require('./news');
-const siteRouter = require('./site');
+const express = require('express');
+const menuRouter = require('./menu');
+const staffRouter = require('./staff');
+const reviewRouter = require('./review');
+const paymentRouter = require('./payment');
 
-function route(app) {
-    app.use('/news', newRouter);
-    app.use('/', siteRouter);
-}
+const router = express.Router();
 
-module.exports = route;
+router.use('/menu', menuRouter);
+router.use('/staff', staffRouter);
+router.use('/review', reviewRouter);
+router.use('/payment', paymentRouter);
+
+module.exports = router;
