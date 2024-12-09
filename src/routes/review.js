@@ -1,16 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const ReviewController = require('../app/controllers/ReviewController'); // Nhập ReviewController
 
-router.get('/', (req, res) => {
-    res.render('review');
-});
-
-router.post('/submit', (req, res) => {
-    const { name, rating, comment } = req.body;
-    // Xử lý đánh giá ở đây
-    res.send(
-        `Cảm ơn ${name}, bạn đã đánh giá ${rating} sao. Nhận xét: ${comment}`,
-    );
-});
+router.get('/', ReviewController.index); // Sử dụng phương thức index từ ReviewController
+router.post('/submit', ReviewController.submit); // Sử dụng phương thức submit từ ReviewController
 
 module.exports = router;

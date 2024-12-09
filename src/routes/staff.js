@@ -1,14 +1,8 @@
 const express = require('express');
 const router = express.Router();
+const StaffController = require('../app/controllers/StaffController'); // Nhập StaffController
 
-router.get('/', (req, res) => {
-    res.render('staff');
-});
-
-router.post('/request', (req, res) => {
-    const { table, message } = req.body;
-    // Xử lý yêu cầu gọi nhân viên ở đây
-    res.send(`Yêu cầu gọi nhân viên cho bàn ${table}: ${message}`);
-});
+router.get('/', StaffController.index); // Sử dụng phương thức index từ StaffController
+router.post('/request', StaffController.request); // Sử dụng phương thức request từ StaffController
 
 module.exports = router;

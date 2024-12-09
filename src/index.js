@@ -9,15 +9,10 @@ const route = require('./routes');
 const db = require('./config/db');
 
 // Connect to DB
-
 db.connect();
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.use(
-    express.urlencoded({
-        extended: true,
-    }),
-);
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Template engine
@@ -28,11 +23,17 @@ app.set('views', path.join(__dirname, 'resources', 'views'));
 // Routes init
 route(app);
 
+// Middleware xử lý lỗi
 app.use((err, req, res, next) => {
     console.error(err.stack);
     res.status(500).send('Something broke!');
 });
 
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
+
+// Khởi động server
 app.listen(port, () => {
     console.log(`App listening on port http://localhost:${port}`);
 });
